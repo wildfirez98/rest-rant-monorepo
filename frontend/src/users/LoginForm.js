@@ -20,6 +20,7 @@ function LoginForm() {
         // Fetch request that will trigger the route handler when our log-in form is submitted and send the username and password to the back-end
         const response = await fetch(`http://localhost:5000/authentication/`, {
             method: 'POST',
+            credentials: 'include',
             headers: {
                 'Content-Type': 'application/json'
             },
