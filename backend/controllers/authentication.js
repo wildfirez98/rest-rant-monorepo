@@ -38,4 +38,16 @@ router.get('/profile', async (req, res) => {
     }
 })
 
+// Samesite cookies test route
+router.post('/super-important-route', async (req, res) => {
+    if(req.session.userId) {
+        console.log('Do the really super important thing!')
+        res.send('Done')
+    } else {
+        console.log('You Shall Not Pass 🧙‍♂️!')
+        res.send('Denied')
+    }
+})
+
+
 module.exports = router
