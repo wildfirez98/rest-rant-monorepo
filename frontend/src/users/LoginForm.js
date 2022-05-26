@@ -30,6 +30,8 @@ function LoginForm() {
 
         if (response.status === 200) {
             setCurrentUser(data.user)
+            localStorage.setItem('token', data.token) //Save our JWT in localStorage so we can send it with future fetch requests
+            console.log(data.token)
             history.push(`/`)
         } else {
             setErrorMessage(data.message)
