@@ -20,6 +20,13 @@ module.exports = (sequelize, DataTypes) => {
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
     email: DataTypes.STRING,
+    role: {
+      type: DataTypes.ENUM,
+      values: [ // Add 'role' data to user model so we can interact with the column in our API
+        'reviewer',
+        'admin',
+      ],
+    },
     passwordDigest: DataTypes.STRING
   }, {
     sequelize,
